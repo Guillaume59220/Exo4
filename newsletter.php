@@ -1,6 +1,10 @@
 <?php
 require_once 'idiorm.php';
 
+ORM::configure('mysql:host=localhost;dbname=newsletter');
+ORM::configure('username', 'root');
+ORM::configure('password', '');
+
 header('Content-type: application/json');
 
 
@@ -14,6 +18,20 @@ header('Content-type: application/json');
             if(!filter_var($eamil, filter_validate_email)) :
 
                 $erreurs['isEmailInvalid'] = true;
+            
+            else :
+
+                $isEmailInDb = ORM::for_table('contact')
+                                -> where('email_contact', $email)
+                                ->count();
+
+                if(!$isEmailInDb) :
+
+                else :
+
+                    $erreurs['isEmailInDb'] = true;
+
+                endif;
 
             endif;
 
