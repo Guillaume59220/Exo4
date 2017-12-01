@@ -27,6 +27,12 @@ header('Content-type: application/json');
 
                 if(!$isEmailInDb) :
 
+                    $contact = ORM::for_table('contact')->create();
+                    $contact->prenom_contact    = $prenom;
+                    $contact->nom_contact       = $nom;
+                    $contact->email_contact     = $email;
+                    $contact->save();
+
                 else :
 
                     $erreurs['isEmailInDb'] = true;
@@ -44,7 +50,7 @@ header('Content-type: application/json');
     
     else :
         echo json_encode([
-            'nodata' => 'Aucune  donn&eacutees d&eacutetect&eacutees.'
+            'nodata' => 'Aucune  donn&eacute d&eacutetect&eacute.'
         ]);
     endif;
 
