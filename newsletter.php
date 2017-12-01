@@ -50,7 +50,7 @@ header('Content-type: application/json');
     
     else :
         echo json_encode([
-            'nodata' => 'Aucune  donn&eacute d&eacutetect&eacute.'
+            'nodata' => 'Aucune donn&eacute d&eacutetect&eacute.'
         ]);
     endif;
 
