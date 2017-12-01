@@ -35,26 +35,10 @@
             <!-- Contenu de mon Site -->
             <div id="contenu">
                 <!-- Titre HTML -->
-                <h1>Rechercher un Contact</h1>
+                <h1>Inscription à la Newsletter</h1>
                 
                 <div class="contenu-page">
-                    <form>
-                        <input type="text" id="search" placeholder="Rechercher un Contact...">
-                    </form>
-                    <div class="resultat">
-                        
-<!--
-                        <div class="membre">
-                            <div class="membre_informations">
-                                <p>Nom Complet :</p>
-                                <p>Username :</p>
-                                <p>Email :</p>
-                                <p>Téléphone :</p>
-                            </div>
-                        </div>
--->
-                        
-                    </div>
+                    <p>Inscrivez vous pour recevoir notre Newsletter</p>
                 </div>
                 
             </div>
@@ -68,13 +52,18 @@
                 <!-- Formulaire Newsletter -->
                 <div class="newsletter">
                     <form>
-                        <fieldset>
-                            <legend>Newsletter</legend>
-                            <input type="email" name="email" placeholder="Adresse Email" />
-                            <input type="text" name="nom" placeholder="Nom" />
-                            <input type="text" name="prenom" placeholder="Prénom" />
-                            <input type="submit" value="M'inscrire !" />
-                        </fieldset>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="email" placeholder="Adresse Email" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nom" placeholder="Nom" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="prenom" placeholder="Prénom" />
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-block btn-primary" type="submit" value="M'inscrire !" />
+                        </div>
                     </form>
                 </div>
                 <!-- Contact -->
