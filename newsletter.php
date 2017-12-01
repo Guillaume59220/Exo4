@@ -9,13 +9,13 @@ header('Content-type: application/json');
 
 
     //Detection de POST
-    if(!empty($post)) :
+    if(!empty($_POST)) :
 
         extract($_POST);
 
         if(!empty($email)) :
 
-            if(!filter_var($eamil, filter_validate_email)) :
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)) :
 
                 $erreurs['isEmailInvalid'] = true;
             
@@ -46,7 +46,19 @@ header('Content-type: application/json');
             $erreurs['isMailEmpty'] = true;
 
         endif;
+
+        if(!isset($erreurs)) :
+            echo json_encode(['success' => true]);
+
+        else :
+
+            echo json_encode([
+                'success' => false,
+                'erreurs' => $erreurs
+            ]);
+    
         
+        endif;
     
     else :
         echo json_encode([
